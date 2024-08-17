@@ -11,6 +11,22 @@
         >
         <label>Username</label>
     </div>
+
+    <!--
+    Example of dropdown menu where we show the users that are in the Users table as a list
+    <div class="mb-3">
+        <label>Who is your favorite user?</label>
+        <select class="form-select">
+            @for (user of usersFromHomeComponent(); track $index)
+        {
+            <option [value]="user.Username">
+                {{user.userName}}
+            </option>
+        }
+        </select>
+    </div>
+    -->
+
     <div class="mb-3 form-floating">
         <input 
         type="password"
