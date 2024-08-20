@@ -1,3 +1,4 @@
+using API.Middleware;
 using static API.Extensions.ApplicationServiceExtensions;
 using static API.Extensions.IdentityServiceExtensions;
 
@@ -11,7 +12,7 @@ builder.Services.AddIdentityServices(builder.Configuration);
 
 
 var app = builder.Build();
-
+app.UseMiddleware<ExceptionMiddleware>();
 app.UseCors(x => x.AllowAnyHeader().AllowAnyMethod().WithOrigins("http://localhost:4200", "https://localhost:4200"));
 app.UseAuthentication(); // Nr. 1
 app.UseAuthorization(); // Nr. 2
